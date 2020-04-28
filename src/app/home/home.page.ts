@@ -21,5 +21,9 @@ export class HomePage {
       });
     });
   }
+  update(student: Estudiante, active: boolean) {
+    student.active = active;
+    this.service.updateStudent(student, student.id);
+  }
 
 }
