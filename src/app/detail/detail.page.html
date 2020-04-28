@@ -3,14 +3,24 @@
     <ion-buttons>
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>{{student.name}}</ion-title>
+    <ion-title>{{student.name }}</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <ion-card text-center>
+    <ion-card-header>
+      <ion-card-subtitle>{{student.name}}</ion-card-subtitle>
+      <ion-card-title>{{student.controlnumber}}</ion-card-title>
+    </ion-card-header>
     <ion-card-content>
       <p>CURP:<strong>{{student.curp}}</strong></p>
       <p>EDAD:<strong>{{student.age}}</strong></p>
+      <ion-chip color="secondary" *ngIf='student.active' class="ion-float-center">
+        <ion-label>Activo</ion-label>
+      </ion-chip>
+      <ion-chip color="danger" *ngIf='!student.active' class="ion-float-center">
+        <ion-label>Inactivo</ion-label >
+      </ion-chip>
     </ion-card-content>
   </ion-card>
 </ion-content>
